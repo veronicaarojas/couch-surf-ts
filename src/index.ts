@@ -1,4 +1,4 @@
-const reviewTotalDisplay = document.querySelector('#reviews')
+const reviewTotalDisplay = document.querySelector<HTMLHeadingElement>('#reviews')
 
 const reviews = [
     {
@@ -20,3 +20,10 @@ const reviews = [
         date: '27-03-2021'
     },
 ]
+
+function showReviewTotal(value : number) {
+  if(reviewTotalDisplay === null) return 
+  reviewTotalDisplay.innerHTML = value.toString()
+}
+
+showReviewTotal(reviews.length)
