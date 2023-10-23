@@ -21,9 +21,19 @@ const reviews = [
     },
 ]
 
-function showReviewTotal(value : number) {
+function showReviewTotal(value : number, reviewer : string) {
   if(reviewTotalDisplay === null) return 
-  reviewTotalDisplay.innerHTML = 'review total' + value.toString()
+  reviewTotalDisplay.innerHTML = 'review total: ' + value.toString() + ", Last reviewed by " + reviewer
 }
 
-showReviewTotal(reviews.length)
+showReviewTotal(reviews.length, recentReview(reviews).name)
+
+function recentReview(reviews: any) {
+reviews.sort((a : any, b: any) => {
+  const dateA : any = new Date(a.date)
+  const dateB : any = new Date(b.date)
+
+  return dateA - dateB
+});
+return reviews[0]
+}
