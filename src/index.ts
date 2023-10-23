@@ -23,7 +23,7 @@ const reviews = [
 
 function showReviewTotal(value : number) {
   if(reviewTotalDisplay === null) return 
-  reviewTotalDisplay.innerHTML = value.toString()
+  reviewTotalDisplay.innerHTML = 'review total' + value.toString()
 }
 
 showReviewTotal(reviews.length)
