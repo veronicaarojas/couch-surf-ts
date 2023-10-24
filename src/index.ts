@@ -2,7 +2,12 @@ const reviewTotalDisplay = document.querySelector<HTMLHeadingElement>('#reviews'
 const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
 
-const reviews = [
+const reviews : {
+  name: string;
+  stars: number;
+  loyaltyUser: boolean;
+  date: string
+}[] = [
     {
         name: 'Sheia',
         stars: 5,
