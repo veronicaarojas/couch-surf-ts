@@ -41,7 +41,13 @@ reviews.sort((a : any, b: any) => {
 return reviews[0]
 }
 
-const you = {
+const you : {
+  userName: {
+    firstName: string;
+    lastName: string;
+  }
+  isReturning: boolean;
+} = {
   userName: {firstName: 'Bobby', lastName: 'Brown'},
   isReturning: true,
 }
