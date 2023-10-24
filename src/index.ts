@@ -52,9 +52,13 @@ const you : {
     lastName: string;
   }
   isReturning: boolean;
+  age: number;
+  stayedAt: string[];
 } = {
   userName: {firstName: 'Bobby', lastName: 'Brown'},
   isReturning: true,
+  age: 35,
+  stayedAt: ['Tokyo, Hvar, Hong Kong']
 }
 
 
