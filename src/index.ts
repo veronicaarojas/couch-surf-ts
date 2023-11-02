@@ -1,5 +1,7 @@
 import { populateUser, showReviewTotal, recentReview } from "./utils";
 
+const propertyContainer = document.querySelector(".properties")
+
 const reviews : {
   name: string;
   stars: number;
@@ -101,7 +103,32 @@ isAvailable: boolean
 }
 ]
 
+function showProperties(properties: { 
+  image: string;
+  title: string;
+  price: number;
+  address: {
+    firstLine: string;
+    city: string;
+    postcode: string | number;
+    country: string
+  }
+  contact: string | number;
+  isAvailable: boolean
+  }[]) {
+  for (let i = 0; i < properties.length; i++) {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+    const image = document.createElement('img')
+    image.setAttribute('src', properties[i].image)
+    card.appendChild(image)
+    if (propertyContainer === null) return
+    propertyContainer.appendChild(card)
+  }
+}
 
+showProperties(properties);
 
 
 populateUser(you.isReturning, you.userName.firstName)
