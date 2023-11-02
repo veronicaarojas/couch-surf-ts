@@ -113,7 +113,7 @@ function showProperties(properties: {
     postcode: string | number;
     country: string
   }
-  contact: string | number;
+  contact: [number, string];
   isAvailable: boolean
   }[]) {
   for (let i = 0; i < properties.length; i++) {
