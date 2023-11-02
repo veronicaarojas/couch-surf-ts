@@ -73,6 +73,19 @@ isAvailiable: boolean
     contact: "jamesrodriguez@gmail.com",
     isAvailiable: true
   },
+  {
+    image: "",
+    title: "Marrakech Riad",
+    price: 65,
+    address: {
+      firstLine: '20 Marrakech Street',
+      city: "Marrakech",
+      postcode: 123,
+      country: "Morcocco "
+    },
+    contact: "ana2023@gmail.com",
+    isAvailiable: false
+  }
   
 ]
 
