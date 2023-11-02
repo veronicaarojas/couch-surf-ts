@@ -1,4 +1,5 @@
 import { populateUser, showReviewTotal, recentReview, populateFooter } from "./utils";
+import { Permissions } from "./enums";
 
 const propertyContainer = document.querySelector(".properties")
 
@@ -35,17 +36,34 @@ showReviewTotal(reviews.length, recentReview(reviews).name, recentReview(reviews
 
 
 
+// const you : {
+//   userName: {
+//     firstName: string;
+//     lastName: string;
+//   }
+//   isReturning: boolean;
+//   age: number;
+//   stayedAt: string[];
+// } = {
+//   userName: {firstName: 'Bobby', lastName: 'Brown'},
+//   isReturning: true,
+//   age: 35,
+//   stayedAt: ['Tokyo, Hvar, Hong Kong']
+// }
+
 const you : {
   userName: {
     firstName: string;
     lastName: string;
   }
   isReturning: boolean;
+  permissions: Permissions
   age: number;
   stayedAt: string[];
-} = {
+}  = {
   userName: {firstName: 'Bobby', lastName: 'Brown'},
   isReturning: true,
+  permissions: Permissions.ADMIN,
   age: 35,
   stayedAt: ['Tokyo, Hvar, Hong Kong']
 }
