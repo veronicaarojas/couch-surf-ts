@@ -61,6 +61,12 @@ const you : {
   stayedAt: ['Tokyo, Hvar, Hong Kong']
 }
 
+const properties : { 
+  
+}[] = [
+  {}
+]
+
 
 function populateUser(isReturning : boolean, userName : string ) {
   if(returningUserDisplay === null) return
