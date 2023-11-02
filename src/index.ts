@@ -58,7 +58,7 @@ address: {
   country: string
 }
 contact: string | number;
-isAvailiable: boolean
+isAvailable: boolean
 }[] = [
   {
     image: "",
@@ -71,7 +71,7 @@ isAvailiable: boolean
       country: "Colombia"
     },
     contact: "jamesrodriguez@gmail.com",
-    isAvailiable: true
+    isAvailable: true
   },
   {
     image: "",
@@ -84,9 +84,21 @@ isAvailiable: boolean
       country: "Morcocco "
     },
     contact: "ana2023@gmail.com",
-    isAvailiable: false
-  }
-  
+    isAvailable: false
+  },
+  {
+    image: '',
+    title: 'London Flat',
+    price: 23,
+    address: {
+        firstLine: 'flat 15',
+        city: 'London',
+        postcode: 35433,
+        country: 'United Kingdom',
+    },
+    contact: 'andyluger@aol.com',
+    isAvailable: true
+}
 ]
 
 
