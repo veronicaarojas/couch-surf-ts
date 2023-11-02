@@ -48,9 +48,32 @@ const you : {
 }
 
 const properties : { 
-
+image: string;
+title: string;
+price: number;
+address: {
+  firstLine: string;
+  city: string;
+  postcode: string | number;
+  country: string
+}
+contact: string | number;
+isAvailiable: boolean
 }[] = [
-  {}
+  {
+    image: "",
+    title: "Colombian Apartment",
+    price: 70,
+    address: {
+      firstLine: "1234 Medellin Street",
+      city: "Medellin",
+      postcode: 8909,
+      country: "Colombia"
+    },
+    contact: "jamesrodriguez@gmail.com",
+    isAvailiable: true
+  },
+  
 ]
 
 
