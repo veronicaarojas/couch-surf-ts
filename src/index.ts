@@ -1,7 +1,7 @@
-import { populateUser, showReviewTotal, recentReview } from "./utils";
+import { populateUser, showReviewTotal, recentReview, populateFooter } from "./utils";
 
 const propertyContainer = document.querySelector(".properties")
-const footer = document.querySelector(".footer")
+
 
 const reviews : {
   name: string;
@@ -136,10 +136,7 @@ populateUser(you.isReturning, you.userName.firstName)
 
 let currentLocation : [string, string, number] = [ 'Brisbane', "6:01pm", 23 ]
 
-function populateFooter(currentLocation: [string, string, number]) {
-  if (footer === null) return
-  footer.innerHTML = currentLocation[0] + ", " + currentLocation[1] + ", " + currentLocation[2] + " degrees Celsius"
-}
+
 
 populateFooter(currentLocation)
 
