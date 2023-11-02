@@ -59,7 +59,7 @@ address: {
   postcode: string | number;
   country: string
 }
-contact: string | number;
+contact: [number, string];
 isAvailable: boolean
 }[] = [
   {
@@ -72,7 +72,7 @@ isAvailable: boolean
       postcode: 8909,
       country: "Colombia"
     },
-    contact: "jamesrodriguez@gmail.com",
+    contact: [ 12457, "jamesrodriguez@gmail.com"],
     isAvailable: true
   },
   {
@@ -85,7 +85,7 @@ isAvailable: boolean
       postcode: 123,
       country: "Morcocco "
     },
-    contact: "ana2023@gmail.com",
+    contact: [ 1234,"ana2023@gmail.com"],
     isAvailable: false
   },
   {
@@ -98,7 +98,7 @@ isAvailable: boolean
         postcode: 35433,
         country: 'United Kingdom',
     },
-    contact: 'andyluger@aol.com',
+    contact: [ 1234,'andyluger@aol.com'],
     isAvailable: true
 }
 ]
