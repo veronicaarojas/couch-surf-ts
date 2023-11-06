@@ -13,10 +13,10 @@ export function populateUser(isReturning : boolean, userName : string ) {
   userNameDisplay.innerHTML = userName
 }
 
-export function showReviewTotal(value : number, reviewer : string, isLoyalty: Loyalty, multiple : string) : void {
+export function showReviewTotal(value : number, reviewer : string, isLoyalty: Loyalty) : void {
   const star = isLoyalty === Loyalty.GOLD_USER ? "⭐" : ""
   if(reviewTotalDisplay === null) return 
-  reviewTotalDisplay.innerHTML =  value.toString() + " " + multiple + " | Last reviewed by " + reviewer + " " + star
+  reviewTotalDisplay.innerHTML =  value.toString() + " " + makeMultiple(value) + " | Last reviewed by " + reviewer + " " + star
 }
 
 export function recentReview(reviews: any) {

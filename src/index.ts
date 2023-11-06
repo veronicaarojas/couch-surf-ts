@@ -40,8 +40,8 @@ const reviews : ({
 ]
 
 
-
-showReviewTotal(reviews.length, recentReview(reviews).name, recentReview(reviews).loyaltyUser, makeMultiple(reviews.length))
+makeMultiple(reviews.length)
+showReviewTotal(reviews.length, recentReview(reviews).name, recentReview(reviews).loyaltyUser)
 
 
 
