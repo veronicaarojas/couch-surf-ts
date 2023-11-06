@@ -1,7 +1,12 @@
-import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple } from "./utils"
+import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple, getTopTwoReviews } from "./utils"
 import { Permissions, Loyalty } from "./enums"
 import type { Price, Country } from "./types"
 const propertyContainer = document.querySelector(".properties")
+const reviewContainer = document.querySelector('.reviews')
+const container = document.querySelector('.container')
+const button = document.querySelector('button')
+const footer = document.querySelector('.footer')
+
 
 let isLoggedIn: boolean = true
 
@@ -179,6 +184,43 @@ function showDetails(authorityStatus: boolean | Permissions, element: HTMLDivEle
     element.appendChild(priceDisplay)
   }
 }
+
+let count = 0
+function addReviews(array: ({
+  name: string;
+  stars: number;
+  loyaltyUser: Loyalty;
+  date: string;
+} | 
+{
+  name: string;
+  stars: number;
+  loyaltyUser: Loyalty;
+  date: string;
+  description: string
+})[]) : void {
+    if (!count ) {
+        count++
+        const topTwo = getTopTwoReviews(array)
+        for (let i = 0; i < topTwo.length; i++) {
+            const card = document.createElement('div')
+            card.classList.add('review-card')
+            card.innerHTML = topTwo[i].stars + ' stars from ' + topTwo[i].name
+            if (reviewContainer)
+            reviewContainer.appendChild(card)
+        }
+        if (container && button)
+        container.removeChild(button) 
+    }
+}
+
+function buttonEvent() {
+  if (button)
+  button.addEventListener('click', () => addReviews(reviews))
+}
+
+buttonEvent();
+
 
 
 
