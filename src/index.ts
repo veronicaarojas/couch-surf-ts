@@ -1,4 +1,4 @@
-import { populateUser, showReviewTotal, recentReview, populateFooter } from "./utils"
+import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple } from "./utils"
 import { Permissions, Loyalty } from "./enums"
 import type { Price, Country } from "./types"
 const propertyContainer = document.querySelector(".properties")
@@ -41,7 +41,7 @@ const reviews : ({
 
 
 
-showReviewTotal(reviews.length, recentReview(reviews).name, recentReview(reviews).loyaltyUser)
+showReviewTotal(reviews.length, recentReview(reviews).name, recentReview(reviews).loyaltyUser, makeMultiple(reviews.length))
 
 
 
