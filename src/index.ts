@@ -1,7 +1,7 @@
 import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple, getTopTwoReviews } from "./utils"
 import { Permissions, Loyalty } from "./enums"
 import type { Price, Country } from "./types"
-import type { Review } from "./interfaces"
+import type { Review, Property } from "./interfaces"
 const propertyContainer = document.querySelector(".properties")
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
@@ -72,21 +72,10 @@ const you : {
 
 
 
-const properties : { 
-image: string;
-title: string;
-price: Price;
-address: {
-  firstLine: string;
-  city: string;
-  postcode: string | number;
-  country: Country
-}
-contact: [number, string];
-isAvailable: boolean
-}[] = [
+const properties : 
+Property[] = [
   {
-    image: "",
+    image: "https://picsum.photos/200/300",
     title: "Colombian Apartment",
     price: 30,
     address: {
@@ -99,7 +88,7 @@ isAvailable: boolean
     isAvailable: true
   },
   {
-    image: "",
+    image: "https://picsum.photos/200/300",
     title: "Marrakech Riad",
     price: 25,
     address: {
@@ -112,7 +101,7 @@ isAvailable: boolean
     isAvailable: false
   },
   {
-    image: '',
+    image: 'https://picsum.photos/200/300',
     title: 'London Flat',
     price: 30,
     address: {
@@ -202,12 +191,34 @@ class MainProperty {
   reviews: Review[]
   src: string
   title: string
-  constructor(reviews : Review[], src : string, title: string) {
+  constructor(src : string, title: string, reviews : Review[]) {
     this.reviews = reviews
     this.src = src
     this.title = title
   }
 }
+
+let yourMainProperty = new MainProperty(
+  'https://picsum.photos/200/300', 
+  'Italian House',
+  [{
+      name: 'Olive',
+      stars: 5,
+      loyaltyUser: Loyalty.GOLD_USER,
+      date: '12-04-2021'
+  }] )
+
+const mainImageContainer = document.querySelector('.main-image')
+
+function mainImage() {
+  const image = document.createElement('img')
+  image.setAttribute('src', yourMainProperty.src)
+  if(mainImageContainer)
+  mainImageContainer.appendChild(image)
+}
+
+mainImage()
+
 
 
 
