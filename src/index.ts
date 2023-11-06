@@ -1,6 +1,5 @@
 import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple, getTopTwoReviews } from "./utils"
 import { Permissions, Loyalty } from "./enums"
-import type { Price, Country } from "./types"
 import type { Review, Property } from "./interfaces"
 const propertyContainer = document.querySelector(".properties")
 const reviewContainer = document.querySelector('.reviews')
@@ -112,6 +111,19 @@ Property[] = [
     },
     contact: [ 1234,'andyluger@aol.com'],
     isAvailable: true
+},
+{
+  image: 'https://picsum.photos/150/150',
+  title: 'Malia Hotel',
+  price: 35,
+  address: {
+      firstLine: 'Room 4',
+      city: 'Malia',
+      postcode: 45334,
+      country: 'Malaysia'
+  },
+  contact: [ +60349822083, 'lee34@gmail.com'],
+  isAvailable: false
 }
 ]
 
