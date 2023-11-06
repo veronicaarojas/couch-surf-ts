@@ -78,6 +78,7 @@ const you : {
 }
 
 type Price = 45 | 30 | 25
+type Country = 'Colombia' | 'Morocco' | 'United Kingdom'
 
 const properties : { 
 image: string;
@@ -87,7 +88,7 @@ address: {
   firstLine: string;
   city: string;
   postcode: string | number;
-  country: string
+  country: Country
 }
 contact: [number, string];
 isAvailable: boolean
@@ -113,7 +114,7 @@ isAvailable: boolean
       firstLine: '20 Marrakech Street',
       city: "Marrakech",
       postcode: 123,
-      country: "Morcocco "
+      country: "Morocco"
     },
     contact: [ 1234,"ana2023@gmail.com"],
     isAvailable: false
