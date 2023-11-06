@@ -2,6 +2,7 @@ const reviewTotalDisplay = document.querySelector<HTMLHeadingElement>('#reviews'
 const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
 const footer = document.querySelector(".footer")
+import { Loyalty } from "./enums"
 
 export function populateUser(isReturning : boolean, userName : string ) {
   if(returningUserDisplay === null) return
@@ -12,8 +13,8 @@ export function populateUser(isReturning : boolean, userName : string ) {
   userNameDisplay.innerHTML = userName
 }
 
-export function showReviewTotal(value : number, reviewer : string, isLoyalty: boolean) {
-  const star = isLoyalty ? "⭐" : ""
+export function showReviewTotal(value : number, reviewer : string, isLoyalty: Loyalty) {
+  const star = isLoyalty === Loyalty.GOLD_USER ? "⭐" : ""
   if(reviewTotalDisplay === null) return 
   reviewTotalDisplay.innerHTML = 'review total: ' + value.toString() + "| Last reviewed by " + reviewer + " " + star
 }
