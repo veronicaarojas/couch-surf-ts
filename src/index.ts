@@ -3,6 +3,7 @@ import { Permissions, Loyalty } from "./enums";
 
 const propertyContainer = document.querySelector(".properties")
 
+let isLoggedIn: boolean = true
 
 const reviews : ({
   name: string;
@@ -152,15 +153,30 @@ function showProperties(properties: {
     card.appendChild(image)
     if (propertyContainer === null) return
     propertyContainer.appendChild(card)
+    showDetails(you.permissions, card, properties[i].price)
   }
 }
 
-showProperties(properties);
+
+
 
 
 populateUser(you.isReturning, you.userName.firstName)
 
 let currentLocation : [string, string, number] = [ 'Brisbane', "6:01pm", 23 ]
+
+
+
+
+showProperties(properties);
+
+function showDetails(authorityStatus: boolean | Permissions, element: HTMLDivElement, price: number){
+  if (authorityStatus || authorityStatus === Permissions.ADMIN || Permissions.READ_ONLY ) {
+    const priceDisplay = document.createElement('div')
+    priceDisplay.innerHTML = price.toString() + '/night'
+    element.appendChild(priceDisplay)
+  }
+}
 
 
 
