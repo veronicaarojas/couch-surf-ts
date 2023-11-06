@@ -4,12 +4,19 @@ import { Permissions, Loyalty } from "./enums";
 const propertyContainer = document.querySelector(".properties")
 
 
-const reviews : {
+const reviews : ({
   name: string;
   stars: number;
   loyaltyUser: Loyalty;
-  date: string
-}[] = [
+  date: string;
+} | 
+{
+  name: string;
+  stars: number;
+  loyaltyUser: Loyalty;
+  date: string;
+  description: string
+})[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -26,7 +33,8 @@ const reviews : {
         name: 'Omar',
         stars: 4,
         loyaltyUser: Loyalty.BRONZE_USER,
-        date: '27-03-2021'
+        date: '27-03-2021', 
+        description: "good location"
     },
 ]
 
