@@ -77,10 +77,12 @@ const you : {
   stayedAt: ['Tokyo, Hvar, Hong Kong']
 }
 
+type Price = 45 | 30 | 25
+
 const properties : { 
 image: string;
 title: string;
-price: number;
+price: Price;
 address: {
   firstLine: string;
   city: string;
@@ -93,7 +95,7 @@ isAvailable: boolean
   {
     image: "",
     title: "Colombian Apartment",
-    price: 70,
+    price: 30,
     address: {
       firstLine: "1234 Medellin Street",
       city: "Medellin",
@@ -106,7 +108,7 @@ isAvailable: boolean
   {
     image: "",
     title: "Marrakech Riad",
-    price: 65,
+    price: 25,
     address: {
       firstLine: '20 Marrakech Street',
       city: "Marrakech",
@@ -119,7 +121,7 @@ isAvailable: boolean
   {
     image: '',
     title: 'London Flat',
-    price: 23,
+    price: 30,
     address: {
         firstLine: 'flat 15',
         city: 'London',
