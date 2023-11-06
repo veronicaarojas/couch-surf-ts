@@ -3,6 +3,7 @@ const userNameDisplay = document.querySelector('#user')
 const returningUserDisplay = document.querySelector('#returning-user')
 const footer = document.querySelector(".footer")
 import { Loyalty } from "./enums"
+import type { Review } from "./interfaces"
 
 export function populateUser(isReturning : boolean, userName : string ) {
   if(returningUserDisplay === null) return
@@ -19,7 +20,7 @@ export function showReviewTotal(value : number, reviewer : string, isLoyalty: Lo
   reviewTotalDisplay.innerHTML =  value.toString() + " " + makeMultiple(value) + " | Last reviewed by " + reviewer + " " + star
 }
 
-export function recentReview(reviews: any) {
+export function recentReview(reviews: Review[]) : Review {
   reviews.sort((a : any, b: any) => {
     const dateA : any = new Date(a.date)
     const dateB : any = new Date(b.date)
@@ -40,32 +41,8 @@ export function recentReview(reviews: any) {
     } else return 'review'
   }
 
-  export function getTopTwoReviews(reviews : ({
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-} | 
-{
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-  description: string
-})[]) : 
-({
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-} | 
-{
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-  description: string
-})[]
+  export function getTopTwoReviews(reviews : Review[]) : 
+Review[]
 {
  const sortedReviews = reviews.sort((a, b) => b.stars - a.stars)
  return sortedReviews.slice(0,2)

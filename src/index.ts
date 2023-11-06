@@ -1,6 +1,7 @@
 import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple, getTopTwoReviews } from "./utils"
 import { Permissions, Loyalty } from "./enums"
 import type { Price, Country } from "./types"
+import type { Review } from "./interfaces"
 const propertyContainer = document.querySelector(".properties")
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
@@ -10,19 +11,7 @@ const footer = document.querySelector('.footer')
 
 let isLoggedIn: boolean = true
 
-const reviews : ({
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-} | 
-{
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-  description: string
-})[] = [
+const reviews : Review[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -40,7 +29,6 @@ const reviews : ({
         stars: 4,
         loyaltyUser: Loyalty.BRONZE_USER,
         date: '27-03-2021', 
-        description: "good location"
     },
 ]
 
@@ -186,19 +174,8 @@ function showDetails(authorityStatus: boolean | Permissions, element: HTMLDivEle
 }
 
 let count = 0
-function addReviews(array: ({
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-} | 
-{
-  name: string;
-  stars: number;
-  loyaltyUser: Loyalty;
-  date: string;
-  description: string
-})[]) : void {
+function addReviews(array: Review[]
+): void {
     if (!count ) {
         count++
         const topTwo = getTopTwoReviews(array)
