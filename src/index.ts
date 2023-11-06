@@ -1,5 +1,6 @@
 import { populateUser, showReviewTotal, recentReview, populateFooter, makeMultiple, getTopTwoReviews } from "./utils"
 import { Permissions, Loyalty } from "./enums"
+import { MainProperty } from "./classes"
 import type { Review, Property } from "./interfaces"
 const propertyContainer = document.querySelector(".properties")
 const reviewContainer = document.querySelector('.reviews')
@@ -199,16 +200,8 @@ function buttonEvent() {
 
 buttonEvent();
 
-class MainProperty {
-  reviews: Review[]
-  src: string
-  title: string
-  constructor(src : string, title: string, reviews : Review[]) {
-    this.reviews = reviews
-    this.src = src
-    this.title = title
-  }
-}
+
+
 
 let yourMainProperty = new MainProperty(
   'https://picsum.photos/200/300', 
