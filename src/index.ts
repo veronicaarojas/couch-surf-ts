@@ -1,6 +1,6 @@
-import { populateUser, showReviewTotal, recentReview, populateFooter } from "./utils";
-import { Permissions, Loyalty } from "./enums";
-
+import { populateUser, showReviewTotal, recentReview, populateFooter } from "./utils"
+import { Permissions, Loyalty } from "./enums"
+import type { Price, Country } from "./types"
 const propertyContainer = document.querySelector(".properties")
 
 let isLoggedIn: boolean = true
@@ -77,8 +77,7 @@ const you : {
   stayedAt: ['Tokyo, Hvar, Hong Kong']
 }
 
-type Price = 45 | 30 | 25
-type Country = 'Colombia' | 'Morocco' | 'United Kingdom'
+
 
 const properties : { 
 image: string;
