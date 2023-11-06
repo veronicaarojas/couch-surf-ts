@@ -75,7 +75,7 @@ const you : {
 const properties : 
 Property[] = [
   {
-    image: "https://picsum.photos/200/300",
+    image: 'https://picsum.photos/150/150',
     title: "Colombian Apartment",
     price: 30,
     address: {
@@ -88,7 +88,7 @@ Property[] = [
     isAvailable: true
   },
   {
-    image: "https://picsum.photos/200/300",
+    image: 'https://picsum.photos/150/150',
     title: "Marrakech Riad",
     price: 25,
     address: {
@@ -101,7 +101,7 @@ Property[] = [
     isAvailable: false
   },
   {
-    image: 'https://picsum.photos/200/300',
+    image: 'https://picsum.photos/150/150',
     title: 'London Flat',
     price: 30,
     address: {
